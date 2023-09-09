@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.10.12 on linux)" generated="20230810 01:33:12.191" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.2 (Python 3.10.12 on linux)" generated="20230910 04:08:24.604" rpa="false" schemaversion="3">
 <suite id="s1" name="Login Test" source="/home/ardhi/personal/robotframework-automation-exercise/tests/login_test.robot">
 <test id="s1-t1" name="Login Using Valid Username and Password" line="11">
 <kw name="Open Main Page Using Chrome Browser" library="resource" type="SETUP">
@@ -7,93 +7,80 @@
 <arg>${MAIN_PAGE}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230810 01:33:12.301" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
-<status status="PASS" starttime="20230810 01:33:12.300" endtime="20230810 01:33:23.082"/>
+<msg timestamp="20230910 04:08:24.724" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<msg timestamp="20230910 04:08:25.503" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20230910 04:08:25.503" level="FAIL">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 116.0.5845.110 with binary path /usr/bin/google-chrome
+Stacktrace:
+#0 0x557fb3e464e3 &lt;unknown&gt;
+#1 0x557fb3b75c76 &lt;unknown&gt;
+#2 0x557fb3ba304a &lt;unknown&gt;
+#3 0x557fb3b9e4a1 &lt;unknown&gt;
+#4 0x557fb3b9b029 &lt;unknown&gt;
+#5 0x557fb3bd9ccc &lt;unknown&gt;
+#6 0x557fb3bd947f &lt;unknown&gt;
+#7 0x557fb3bd0de3 &lt;unknown&gt;
+#8 0x557fb3ba62dd &lt;unknown&gt;
+#9 0x557fb3ba734e &lt;unknown&gt;
+#10 0x557fb3e063e4 &lt;unknown&gt;
+#11 0x557fb3e0a3d7 &lt;unknown&gt;
+#12 0x557fb3e14b20 &lt;unknown&gt;
+#13 0x557fb3e0b023 &lt;unknown&gt;
+#14 0x557fb3dd91aa &lt;unknown&gt;
+#15 0x557fb3e2f6b8 &lt;unknown&gt;
+#16 0x557fb3e2f847 &lt;unknown&gt;
+#17 0x557fb3e3f243 &lt;unknown&gt;
+#18 0x7f4237694b43 &lt;unknown&gt;
+</msg>
+<status status="FAIL" starttime="20230910 04:08:24.724" endtime="20230910 04:08:25.505"/>
 </kw>
 <kw name="Reload Page" library="SeleniumLibrary">
 <doc>Simulates user reloading page.</doc>
-<status status="PASS" starttime="20230810 01:33:23.083" endtime="20230810 01:33:23.536"/>
+<status status="NOT RUN" starttime="20230910 04:08:25.505" endtime="20230910 04:08:25.505"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230810 01:33:23.536" endtime="20230810 01:33:23.640"/>
+<status status="NOT RUN" starttime="20230910 04:08:25.505" endtime="20230910 04:08:25.505"/>
 </kw>
-<status status="PASS" starttime="20230810 01:33:12.300" endtime="20230810 01:33:23.640"/>
-</kw>
-<kw name="User Input Valid Username" library="login_steps">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${username_input}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230810 01:33:23.641" endtime="20230810 01:33:25.000"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${username_input}</arg>
-<arg>Admin</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230810 01:33:25.001" level="INFO">Typing text 'Admin' into text field 'xpath=//input[@name='username']'.</msg>
-<status status="PASS" starttime="20230810 01:33:25.001" endtime="20230810 01:33:25.100"/>
-</kw>
-<status status="PASS" starttime="20230810 01:33:23.641" endtime="20230810 01:33:25.100"/>
-</kw>
-<kw name="User Input Valid Password" library="login_steps">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${password_input}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230810 01:33:25.101" endtime="20230810 01:33:25.156"/>
-</kw>
-<kw name="Input Password" library="SeleniumLibrary">
-<arg>${password_input}</arg>
-<arg>admin123</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20230810 01:33:25.157" level="INFO">Typing password into text field 'xpath=//input[@name='password']'.</msg>
-<msg timestamp="20230810 01:33:25.190" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20230810 01:33:25.301" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20230810 01:33:25.156" endtime="20230810 01:33:25.301"/>
-</kw>
-<status status="PASS" starttime="20230810 01:33:25.100" endtime="20230810 01:33:25.302"/>
-</kw>
-<kw name="User Click Login" library="login_steps">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${login_button}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230810 01:33:25.303" endtime="20230810 01:33:25.343"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${login_button}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230810 01:33:25.345" level="INFO">Clicking button 'xpath=//button[@class='oxd-button oxd-button--medium oxd-button--main orangehrm-login-button']'.</msg>
-<status status="PASS" starttime="20230810 01:33:25.344" endtime="20230810 01:33:25.447"/>
-</kw>
-<status status="PASS" starttime="20230810 01:33:25.302" endtime="20230810 01:33:25.447"/>
-</kw>
-<kw name="User Success Login" library="login_steps">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${profile_button}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230810 01:33:25.448" endtime="20230810 01:33:27.226"/>
-</kw>
-<kw name="Element Should Be Visible" library="SeleniumLibrary">
-<arg>${profile_button}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20230810 01:33:27.242" level="INFO">Element 'xpath=//span[@class='oxd-userdropdown-tab']' is displayed.</msg>
-<status status="PASS" starttime="20230810 01:33:27.227" endtime="20230810 01:33:27.242"/>
-</kw>
-<status status="PASS" starttime="20230810 01:33:25.447" endtime="20230810 01:33:27.242"/>
+<status status="FAIL" starttime="20230910 04:08:24.723" endtime="20230910 04:08:25.505"/>
 </kw>
 <kw name="Close Browser In The End of Test Cases" library="resource" type="TEARDOWN">
 <kw name="Sleep" library="BuiltIn">
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230810 01:33:30.243" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230810 01:33:27.242" endtime="20230810 01:33:30.243"/>
+<msg timestamp="20230910 04:08:28.506" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230910 04:08:25.506" endtime="20230910 04:08:28.506"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230810 01:33:30.243" endtime="20230810 01:33:30.307"/>
+<status status="PASS" starttime="20230910 04:08:28.506" endtime="20230910 04:08:28.506"/>
 </kw>
-<status status="PASS" starttime="20230810 01:33:27.242" endtime="20230810 01:33:30.307"/>
+<status status="PASS" starttime="20230910 04:08:25.505" endtime="20230910 04:08:28.506"/>
 </kw>
-<status status="PASS" starttime="20230810 01:33:12.300" endtime="20230810 01:33:30.308"/>
+<status status="FAIL" starttime="20230910 04:08:24.723" endtime="20230910 04:08:28.506">Setup failed:
+SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 116.0.5845.110 with binary path /usr/bin/google-chrome
+Stacktrace:
+#0 0x557fb3e464e3 &lt;unknown&gt;
+#1 0x557fb3b75c76 &lt;unknown&gt;
+#2 0x557fb3ba304a &lt;unknown&gt;
+#3 0x557fb3b9e4a1 &lt;unknown&gt;
+#4 0x557fb3b9b029 &lt;unknown&gt;
+#5 0x557fb3bd9ccc &lt;unknown&gt;
+#6 0x557fb3bd947f &lt;unknown&gt;
+#7 0x557fb3bd0de3 &lt;unknown&gt;
+#8 0x557fb3ba62dd &lt;unknown&gt;
+#9 0x557fb3ba734e &lt;unknown&gt;
+#10 0x557fb3e063e4 &lt;unknown&gt;
+#11 0x557fb3e0a3d7 &lt;unknown&gt;
+#12 0x557fb3e14b20 &lt;unknown&gt;
+#13 0x557fb3e0b023 &lt;unknown&gt;
+#14 0x557fb3dd91aa &lt;unknown&gt;
+#15 0x557fb3e2f6b8 &lt;unknown&gt;
+#16 0x557fb3e2f847 &lt;unknown&gt;
+#17 0x557fb3e3f243 &lt;unknown&gt;
+#18 0x7f4237694b43 &lt;unknown&gt;
+</status>
 </test>
 <test id="s1-t2" name="Login Without Input Username" line="17">
 <kw name="Open Main Page Using Chrome Browser" library="resource" type="SETUP">
@@ -101,78 +88,80 @@
 <arg>${MAIN_PAGE}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230810 01:33:30.310" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
-<status status="PASS" starttime="20230810 01:33:30.310" endtime="20230810 01:33:35.368"/>
+<msg timestamp="20230910 04:08:28.507" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<msg timestamp="20230910 04:08:29.272" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20230910 04:08:29.272" level="FAIL">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 116.0.5845.110 with binary path /usr/bin/google-chrome
+Stacktrace:
+#0 0x55eb58efe4e3 &lt;unknown&gt;
+#1 0x55eb58c2dc76 &lt;unknown&gt;
+#2 0x55eb58c5b04a &lt;unknown&gt;
+#3 0x55eb58c564a1 &lt;unknown&gt;
+#4 0x55eb58c53029 &lt;unknown&gt;
+#5 0x55eb58c91ccc &lt;unknown&gt;
+#6 0x55eb58c9147f &lt;unknown&gt;
+#7 0x55eb58c88de3 &lt;unknown&gt;
+#8 0x55eb58c5e2dd &lt;unknown&gt;
+#9 0x55eb58c5f34e &lt;unknown&gt;
+#10 0x55eb58ebe3e4 &lt;unknown&gt;
+#11 0x55eb58ec23d7 &lt;unknown&gt;
+#12 0x55eb58eccb20 &lt;unknown&gt;
+#13 0x55eb58ec3023 &lt;unknown&gt;
+#14 0x55eb58e911aa &lt;unknown&gt;
+#15 0x55eb58ee76b8 &lt;unknown&gt;
+#16 0x55eb58ee7847 &lt;unknown&gt;
+#17 0x55eb58ef7243 &lt;unknown&gt;
+#18 0x7f11faa94b43 &lt;unknown&gt;
+</msg>
+<status status="FAIL" starttime="20230910 04:08:28.507" endtime="20230910 04:08:29.272"/>
 </kw>
 <kw name="Reload Page" library="SeleniumLibrary">
 <doc>Simulates user reloading page.</doc>
-<status status="PASS" starttime="20230810 01:33:35.368" endtime="20230810 01:33:35.839"/>
+<status status="NOT RUN" starttime="20230910 04:08:29.272" endtime="20230910 04:08:29.272"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230810 01:33:35.839" endtime="20230810 01:33:35.943"/>
+<status status="NOT RUN" starttime="20230910 04:08:29.272" endtime="20230910 04:08:29.272"/>
 </kw>
-<status status="PASS" starttime="20230810 01:33:30.309" endtime="20230810 01:33:35.943"/>
-</kw>
-<kw name="User Input Valid Password" library="login_steps">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${password_input}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230810 01:33:35.943" endtime="20230810 01:33:36.849"/>
-</kw>
-<kw name="Input Password" library="SeleniumLibrary">
-<arg>${password_input}</arg>
-<arg>admin123</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20230810 01:33:36.850" level="INFO">Typing password into text field 'xpath=//input[@name='password']'.</msg>
-<msg timestamp="20230810 01:33:36.875" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20230810 01:33:36.914" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20230810 01:33:36.849" endtime="20230810 01:33:36.914"/>
-</kw>
-<status status="PASS" starttime="20230810 01:33:35.943" endtime="20230810 01:33:36.915"/>
-</kw>
-<kw name="User Click Login" library="login_steps">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${login_button}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230810 01:33:36.915" endtime="20230810 01:33:36.935"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${login_button}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230810 01:33:36.936" level="INFO">Clicking button 'xpath=//button[@class='oxd-button oxd-button--medium oxd-button--main orangehrm-login-button']'.</msg>
-<status status="PASS" starttime="20230810 01:33:36.935" endtime="20230810 01:33:36.974"/>
-</kw>
-<status status="PASS" starttime="20230810 01:33:36.915" endtime="20230810 01:33:36.974"/>
-</kw>
-<kw name="Error message field is required" library="login_steps">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${required_username}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230810 01:33:36.974" endtime="20230810 01:33:36.997"/>
-</kw>
-<kw name="Element Should Be Visible" library="SeleniumLibrary">
-<arg>${required_username}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20230810 01:33:37.008" level="INFO">Element 'xpath=(//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message'])[1]' is displayed.</msg>
-<status status="PASS" starttime="20230810 01:33:36.997" endtime="20230810 01:33:37.008"/>
-</kw>
-<status status="PASS" starttime="20230810 01:33:36.974" endtime="20230810 01:33:37.008"/>
+<status status="FAIL" starttime="20230910 04:08:28.507" endtime="20230910 04:08:29.273"/>
 </kw>
 <kw name="Close Browser In The End of Test Cases" library="resource" type="TEARDOWN">
 <kw name="Sleep" library="BuiltIn">
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230810 01:33:40.009" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230810 01:33:37.008" endtime="20230810 01:33:40.009"/>
+<msg timestamp="20230910 04:08:32.273" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230910 04:08:29.273" endtime="20230910 04:08:32.273"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230810 01:33:40.009" endtime="20230810 01:33:40.083"/>
+<status status="PASS" starttime="20230910 04:08:32.273" endtime="20230910 04:08:32.274"/>
 </kw>
-<status status="PASS" starttime="20230810 01:33:37.008" endtime="20230810 01:33:40.084"/>
+<status status="PASS" starttime="20230910 04:08:29.273" endtime="20230910 04:08:32.274"/>
 </kw>
-<status status="PASS" starttime="20230810 01:33:30.309" endtime="20230810 01:33:40.084"/>
+<status status="FAIL" starttime="20230910 04:08:28.507" endtime="20230910 04:08:32.274">Setup failed:
+SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 116.0.5845.110 with binary path /usr/bin/google-chrome
+Stacktrace:
+#0 0x55eb58efe4e3 &lt;unknown&gt;
+#1 0x55eb58c2dc76 &lt;unknown&gt;
+#2 0x55eb58c5b04a &lt;unknown&gt;
+#3 0x55eb58c564a1 &lt;unknown&gt;
+#4 0x55eb58c53029 &lt;unknown&gt;
+#5 0x55eb58c91ccc &lt;unknown&gt;
+#6 0x55eb58c9147f &lt;unknown&gt;
+#7 0x55eb58c88de3 &lt;unknown&gt;
+#8 0x55eb58c5e2dd &lt;unknown&gt;
+#9 0x55eb58c5f34e &lt;unknown&gt;
+#10 0x55eb58ebe3e4 &lt;unknown&gt;
+#11 0x55eb58ec23d7 &lt;unknown&gt;
+#12 0x55eb58eccb20 &lt;unknown&gt;
+#13 0x55eb58ec3023 &lt;unknown&gt;
+#14 0x55eb58e911aa &lt;unknown&gt;
+#15 0x55eb58ee76b8 &lt;unknown&gt;
+#16 0x55eb58ee7847 &lt;unknown&gt;
+#17 0x55eb58ef7243 &lt;unknown&gt;
+#18 0x7f11faa94b43 &lt;unknown&gt;
+</status>
 </test>
 <test id="s1-t3" name="Login Without Input password" line="23">
 <kw name="Open Main Page Using Chrome Browser" library="resource" type="SETUP">
@@ -180,76 +169,80 @@
 <arg>${MAIN_PAGE}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230810 01:33:40.086" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
-<status status="PASS" starttime="20230810 01:33:40.086" endtime="20230810 01:33:45.452"/>
+<msg timestamp="20230910 04:08:32.275" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<msg timestamp="20230910 04:08:33.049" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20230910 04:08:33.049" level="FAIL">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 116.0.5845.110 with binary path /usr/bin/google-chrome
+Stacktrace:
+#0 0x56356eb984e3 &lt;unknown&gt;
+#1 0x56356e8c7c76 &lt;unknown&gt;
+#2 0x56356e8f504a &lt;unknown&gt;
+#3 0x56356e8f04a1 &lt;unknown&gt;
+#4 0x56356e8ed029 &lt;unknown&gt;
+#5 0x56356e92bccc &lt;unknown&gt;
+#6 0x56356e92b47f &lt;unknown&gt;
+#7 0x56356e922de3 &lt;unknown&gt;
+#8 0x56356e8f82dd &lt;unknown&gt;
+#9 0x56356e8f934e &lt;unknown&gt;
+#10 0x56356eb583e4 &lt;unknown&gt;
+#11 0x56356eb5c3d7 &lt;unknown&gt;
+#12 0x56356eb66b20 &lt;unknown&gt;
+#13 0x56356eb5d023 &lt;unknown&gt;
+#14 0x56356eb2b1aa &lt;unknown&gt;
+#15 0x56356eb816b8 &lt;unknown&gt;
+#16 0x56356eb81847 &lt;unknown&gt;
+#17 0x56356eb91243 &lt;unknown&gt;
+#18 0x7fe697c94b43 &lt;unknown&gt;
+</msg>
+<status status="FAIL" starttime="20230910 04:08:32.275" endtime="20230910 04:08:33.049"/>
 </kw>
 <kw name="Reload Page" library="SeleniumLibrary">
 <doc>Simulates user reloading page.</doc>
-<status status="PASS" starttime="20230810 01:33:45.452" endtime="20230810 01:33:45.919"/>
+<status status="NOT RUN" starttime="20230910 04:08:33.049" endtime="20230910 04:08:33.049"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230810 01:33:45.919" endtime="20230810 01:33:46.022"/>
+<status status="NOT RUN" starttime="20230910 04:08:33.049" endtime="20230910 04:08:33.049"/>
 </kw>
-<status status="PASS" starttime="20230810 01:33:40.085" endtime="20230810 01:33:46.022"/>
-</kw>
-<kw name="User Input Valid Username" library="login_steps">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${username_input}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230810 01:33:46.022" endtime="20230810 01:33:46.881"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${username_input}</arg>
-<arg>Admin</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230810 01:33:46.881" level="INFO">Typing text 'Admin' into text field 'xpath=//input[@name='username']'.</msg>
-<status status="PASS" starttime="20230810 01:33:46.881" endtime="20230810 01:33:46.934"/>
-</kw>
-<status status="PASS" starttime="20230810 01:33:46.022" endtime="20230810 01:33:46.934"/>
-</kw>
-<kw name="User Click Login" library="login_steps">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${login_button}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230810 01:33:46.934" endtime="20230810 01:33:46.961"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${login_button}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230810 01:33:46.961" level="INFO">Clicking button 'xpath=//button[@class='oxd-button oxd-button--medium oxd-button--main orangehrm-login-button']'.</msg>
-<status status="PASS" starttime="20230810 01:33:46.961" endtime="20230810 01:33:46.996"/>
-</kw>
-<status status="PASS" starttime="20230810 01:33:46.934" endtime="20230810 01:33:46.996"/>
-</kw>
-<kw name="Error message field is required" library="login_steps">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${required_username}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230810 01:33:46.997" endtime="20230810 01:33:47.014"/>
-</kw>
-<kw name="Element Should Be Visible" library="SeleniumLibrary">
-<arg>${required_username}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20230810 01:33:47.028" level="INFO">Element 'xpath=(//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message'])[1]' is displayed.</msg>
-<status status="PASS" starttime="20230810 01:33:47.014" endtime="20230810 01:33:47.029"/>
-</kw>
-<status status="PASS" starttime="20230810 01:33:46.996" endtime="20230810 01:33:47.029"/>
+<status status="FAIL" starttime="20230910 04:08:32.274" endtime="20230910 04:08:33.049"/>
 </kw>
 <kw name="Close Browser In The End of Test Cases" library="resource" type="TEARDOWN">
 <kw name="Sleep" library="BuiltIn">
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230810 01:33:50.030" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230810 01:33:47.030" endtime="20230810 01:33:50.031"/>
+<msg timestamp="20230910 04:08:36.050" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230910 04:08:33.050" endtime="20230910 04:08:36.050"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230810 01:33:50.031" endtime="20230810 01:33:50.092"/>
+<status status="PASS" starttime="20230910 04:08:36.051" endtime="20230910 04:08:36.051"/>
 </kw>
-<status status="PASS" starttime="20230810 01:33:47.029" endtime="20230810 01:33:50.092"/>
+<status status="PASS" starttime="20230910 04:08:33.050" endtime="20230910 04:08:36.051"/>
 </kw>
-<status status="PASS" starttime="20230810 01:33:40.084" endtime="20230810 01:33:50.092"/>
+<status status="FAIL" starttime="20230910 04:08:32.274" endtime="20230910 04:08:36.051">Setup failed:
+SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 116.0.5845.110 with binary path /usr/bin/google-chrome
+Stacktrace:
+#0 0x56356eb984e3 &lt;unknown&gt;
+#1 0x56356e8c7c76 &lt;unknown&gt;
+#2 0x56356e8f504a &lt;unknown&gt;
+#3 0x56356e8f04a1 &lt;unknown&gt;
+#4 0x56356e8ed029 &lt;unknown&gt;
+#5 0x56356e92bccc &lt;unknown&gt;
+#6 0x56356e92b47f &lt;unknown&gt;
+#7 0x56356e922de3 &lt;unknown&gt;
+#8 0x56356e8f82dd &lt;unknown&gt;
+#9 0x56356e8f934e &lt;unknown&gt;
+#10 0x56356eb583e4 &lt;unknown&gt;
+#11 0x56356eb5c3d7 &lt;unknown&gt;
+#12 0x56356eb66b20 &lt;unknown&gt;
+#13 0x56356eb5d023 &lt;unknown&gt;
+#14 0x56356eb2b1aa &lt;unknown&gt;
+#15 0x56356eb816b8 &lt;unknown&gt;
+#16 0x56356eb81847 &lt;unknown&gt;
+#17 0x56356eb91243 &lt;unknown&gt;
+#18 0x7fe697c94b43 &lt;unknown&gt;
+</status>
 </test>
 <test id="s1-t4" name="Login Without Input password and Username" line="29">
 <kw name="Open Main Page Using Chrome Browser" library="resource" type="SETUP">
@@ -257,72 +250,80 @@
 <arg>${MAIN_PAGE}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230810 01:33:50.094" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
-<status status="PASS" starttime="20230810 01:33:50.093" endtime="20230810 01:33:59.925"/>
+<msg timestamp="20230910 04:08:36.052" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<msg timestamp="20230910 04:08:36.805" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20230910 04:08:36.805" level="FAIL">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 116.0.5845.110 with binary path /usr/bin/google-chrome
+Stacktrace:
+#0 0x5654ca8c94e3 &lt;unknown&gt;
+#1 0x5654ca5f8c76 &lt;unknown&gt;
+#2 0x5654ca62604a &lt;unknown&gt;
+#3 0x5654ca6214a1 &lt;unknown&gt;
+#4 0x5654ca61e029 &lt;unknown&gt;
+#5 0x5654ca65cccc &lt;unknown&gt;
+#6 0x5654ca65c47f &lt;unknown&gt;
+#7 0x5654ca653de3 &lt;unknown&gt;
+#8 0x5654ca6292dd &lt;unknown&gt;
+#9 0x5654ca62a34e &lt;unknown&gt;
+#10 0x5654ca8893e4 &lt;unknown&gt;
+#11 0x5654ca88d3d7 &lt;unknown&gt;
+#12 0x5654ca897b20 &lt;unknown&gt;
+#13 0x5654ca88e023 &lt;unknown&gt;
+#14 0x5654ca85c1aa &lt;unknown&gt;
+#15 0x5654ca8b26b8 &lt;unknown&gt;
+#16 0x5654ca8b2847 &lt;unknown&gt;
+#17 0x5654ca8c2243 &lt;unknown&gt;
+#18 0x7faaa0a94b43 &lt;unknown&gt;
+</msg>
+<status status="FAIL" starttime="20230910 04:08:36.052" endtime="20230910 04:08:36.805"/>
 </kw>
 <kw name="Reload Page" library="SeleniumLibrary">
 <doc>Simulates user reloading page.</doc>
-<status status="PASS" starttime="20230810 01:33:59.925" endtime="20230810 01:34:00.388"/>
+<status status="NOT RUN" starttime="20230910 04:08:36.805" endtime="20230910 04:08:36.805"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230810 01:34:00.388" endtime="20230810 01:34:00.490"/>
+<status status="NOT RUN" starttime="20230910 04:08:36.805" endtime="20230910 04:08:36.805"/>
 </kw>
-<status status="PASS" starttime="20230810 01:33:50.093" endtime="20230810 01:34:00.490"/>
-</kw>
-<kw name="User Click Login" library="login_steps">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${login_button}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230810 01:34:00.491" endtime="20230810 01:34:02.190"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${login_button}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230810 01:34:02.190" level="INFO">Clicking button 'xpath=//button[@class='oxd-button oxd-button--medium oxd-button--main orangehrm-login-button']'.</msg>
-<status status="PASS" starttime="20230810 01:34:02.190" endtime="20230810 01:34:02.232"/>
-</kw>
-<status status="PASS" starttime="20230810 01:34:00.490" endtime="20230810 01:34:02.232"/>
-</kw>
-<kw name="Error message Username and Password is required" library="login_steps">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${required_password}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230810 01:34:02.233" endtime="20230810 01:34:02.260"/>
-</kw>
-<kw name="Element Should Be Visible" library="SeleniumLibrary">
-<arg>${required_password}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20230810 01:34:02.272" level="INFO">Element 'xpath=(//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message'])[2]' is displayed.</msg>
-<status status="PASS" starttime="20230810 01:34:02.260" endtime="20230810 01:34:02.272"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${required_username}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230810 01:34:02.272" endtime="20230810 01:34:02.285"/>
-</kw>
-<kw name="Element Should Be Visible" library="SeleniumLibrary">
-<arg>${required_username}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20230810 01:34:02.298" level="INFO">Element 'xpath=(//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message'])[1]' is displayed.</msg>
-<status status="PASS" starttime="20230810 01:34:02.285" endtime="20230810 01:34:02.298"/>
-</kw>
-<status status="PASS" starttime="20230810 01:34:02.233" endtime="20230810 01:34:02.298"/>
+<status status="FAIL" starttime="20230910 04:08:36.051" endtime="20230910 04:08:36.806"/>
 </kw>
 <kw name="Close Browser In The End of Test Cases" library="resource" type="TEARDOWN">
 <kw name="Sleep" library="BuiltIn">
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230810 01:34:05.299" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230810 01:34:02.299" endtime="20230810 01:34:05.299"/>
+<msg timestamp="20230910 04:08:39.806" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230910 04:08:36.806" endtime="20230910 04:08:39.806"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230810 01:34:05.300" endtime="20230810 01:34:05.360"/>
+<status status="PASS" starttime="20230910 04:08:39.806" endtime="20230910 04:08:39.807"/>
 </kw>
-<status status="PASS" starttime="20230810 01:34:02.299" endtime="20230810 01:34:05.361"/>
+<status status="PASS" starttime="20230910 04:08:36.806" endtime="20230910 04:08:39.807"/>
 </kw>
-<status status="PASS" starttime="20230810 01:33:50.093" endtime="20230810 01:34:05.361"/>
+<status status="FAIL" starttime="20230910 04:08:36.051" endtime="20230910 04:08:39.807">Setup failed:
+SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 116.0.5845.110 with binary path /usr/bin/google-chrome
+Stacktrace:
+#0 0x5654ca8c94e3 &lt;unknown&gt;
+#1 0x5654ca5f8c76 &lt;unknown&gt;
+#2 0x5654ca62604a &lt;unknown&gt;
+#3 0x5654ca6214a1 &lt;unknown&gt;
+#4 0x5654ca61e029 &lt;unknown&gt;
+#5 0x5654ca65cccc &lt;unknown&gt;
+#6 0x5654ca65c47f &lt;unknown&gt;
+#7 0x5654ca653de3 &lt;unknown&gt;
+#8 0x5654ca6292dd &lt;unknown&gt;
+#9 0x5654ca62a34e &lt;unknown&gt;
+#10 0x5654ca8893e4 &lt;unknown&gt;
+#11 0x5654ca88d3d7 &lt;unknown&gt;
+#12 0x5654ca897b20 &lt;unknown&gt;
+#13 0x5654ca88e023 &lt;unknown&gt;
+#14 0x5654ca85c1aa &lt;unknown&gt;
+#15 0x5654ca8b26b8 &lt;unknown&gt;
+#16 0x5654ca8b2847 &lt;unknown&gt;
+#17 0x5654ca8c2243 &lt;unknown&gt;
+#18 0x7faaa0a94b43 &lt;unknown&gt;
+</status>
 </test>
 <test id="s1-t5" name="Login using Invalid Account" line="34">
 <kw name="Open Main Page Using Chrome Browser" library="resource" type="SETUP">
@@ -330,104 +331,91 @@
 <arg>${MAIN_PAGE}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230810 01:34:05.363" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
-<status status="PASS" starttime="20230810 01:34:05.362" endtime="20230810 01:34:10.591"/>
+<msg timestamp="20230910 04:08:39.808" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<msg timestamp="20230910 04:08:40.591" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20230910 04:08:40.591" level="FAIL">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 116.0.5845.110 with binary path /usr/bin/google-chrome
+Stacktrace:
+#0 0x5590d16654e3 &lt;unknown&gt;
+#1 0x5590d1394c76 &lt;unknown&gt;
+#2 0x5590d13c204a &lt;unknown&gt;
+#3 0x5590d13bd4a1 &lt;unknown&gt;
+#4 0x5590d13ba029 &lt;unknown&gt;
+#5 0x5590d13f8ccc &lt;unknown&gt;
+#6 0x5590d13f847f &lt;unknown&gt;
+#7 0x5590d13efde3 &lt;unknown&gt;
+#8 0x5590d13c52dd &lt;unknown&gt;
+#9 0x5590d13c634e &lt;unknown&gt;
+#10 0x5590d16253e4 &lt;unknown&gt;
+#11 0x5590d16293d7 &lt;unknown&gt;
+#12 0x5590d1633b20 &lt;unknown&gt;
+#13 0x5590d162a023 &lt;unknown&gt;
+#14 0x5590d15f81aa &lt;unknown&gt;
+#15 0x5590d164e6b8 &lt;unknown&gt;
+#16 0x5590d164e847 &lt;unknown&gt;
+#17 0x5590d165e243 &lt;unknown&gt;
+#18 0x7fc909e94b43 &lt;unknown&gt;
+</msg>
+<status status="FAIL" starttime="20230910 04:08:39.807" endtime="20230910 04:08:40.592"/>
 </kw>
 <kw name="Reload Page" library="SeleniumLibrary">
 <doc>Simulates user reloading page.</doc>
-<status status="PASS" starttime="20230810 01:34:10.591" endtime="20230810 01:34:11.079"/>
+<status status="NOT RUN" starttime="20230910 04:08:40.592" endtime="20230910 04:08:40.592"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230810 01:34:11.079" endtime="20230810 01:34:11.181"/>
+<status status="NOT RUN" starttime="20230910 04:08:40.592" endtime="20230910 04:08:40.592"/>
 </kw>
-<status status="PASS" starttime="20230810 01:34:05.362" endtime="20230810 01:34:11.182"/>
-</kw>
-<kw name="User Input Invalid Username" library="login_steps">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${username_input}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230810 01:34:11.182" endtime="20230810 01:34:12.033"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${username_input}</arg>
-<arg>Admin2</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230810 01:34:12.034" level="INFO">Typing text 'Admin2' into text field 'xpath=//input[@name='username']'.</msg>
-<status status="PASS" starttime="20230810 01:34:12.034" endtime="20230810 01:34:12.086"/>
-</kw>
-<status status="PASS" starttime="20230810 01:34:11.182" endtime="20230810 01:34:12.086"/>
-</kw>
-<kw name="User Input Invalid Password" library="login_steps">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${password_input}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230810 01:34:12.087" endtime="20230810 01:34:12.112"/>
-</kw>
-<kw name="Input Password" library="SeleniumLibrary">
-<arg>${password_input}</arg>
-<arg>admin1232</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20230810 01:34:12.113" level="INFO">Typing password into text field 'xpath=//input[@name='password']'.</msg>
-<msg timestamp="20230810 01:34:12.130" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20230810 01:34:12.162" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20230810 01:34:12.112" endtime="20230810 01:34:12.162"/>
-</kw>
-<status status="PASS" starttime="20230810 01:34:12.087" endtime="20230810 01:34:12.162"/>
-</kw>
-<kw name="User Click Login" library="login_steps">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${login_button}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230810 01:34:12.163" endtime="20230810 01:34:12.189"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${login_button}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230810 01:34:12.190" level="INFO">Clicking button 'xpath=//button[@class='oxd-button oxd-button--medium oxd-button--main orangehrm-login-button']'.</msg>
-<status status="PASS" starttime="20230810 01:34:12.189" endtime="20230810 01:34:13.127"/>
-</kw>
-<status status="PASS" starttime="20230810 01:34:12.162" endtime="20230810 01:34:13.127"/>
-</kw>
-<kw name="invalid credentials" library="login_steps">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${invalid_credential_message}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230810 01:34:13.127" endtime="20230810 01:34:13.572"/>
-</kw>
-<kw name="Element Should Be Visible" library="SeleniumLibrary">
-<arg>${invalid_credential_message}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20230810 01:34:13.582" level="INFO">Element 'xpath=//p[contains(@class, 'oxd-text') and contains(@class, 'oxd-text--p') and contains(@class, 'oxd-alert-content-text') and text() = 'Invalid credentials']' is displayed.</msg>
-<status status="PASS" starttime="20230810 01:34:13.572" endtime="20230810 01:34:13.582"/>
-</kw>
-<status status="PASS" starttime="20230810 01:34:13.127" endtime="20230810 01:34:13.582"/>
+<status status="FAIL" starttime="20230910 04:08:39.807" endtime="20230910 04:08:40.592"/>
 </kw>
 <kw name="Close Browser In The End of Test Cases" library="resource" type="TEARDOWN">
 <kw name="Sleep" library="BuiltIn">
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230810 01:34:16.583" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230810 01:34:13.582" endtime="20230810 01:34:16.583"/>
+<msg timestamp="20230910 04:08:43.594" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230910 04:08:40.594" endtime="20230910 04:08:43.595"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230810 01:34:16.583" endtime="20230810 01:34:16.645"/>
+<status status="PASS" starttime="20230910 04:08:43.595" endtime="20230910 04:08:43.595"/>
 </kw>
-<status status="PASS" starttime="20230810 01:34:13.582" endtime="20230810 01:34:16.645"/>
+<status status="PASS" starttime="20230910 04:08:40.593" endtime="20230910 04:08:43.595"/>
 </kw>
-<status status="PASS" starttime="20230810 01:34:05.362" endtime="20230810 01:34:16.645"/>
+<status status="FAIL" starttime="20230910 04:08:39.807" endtime="20230910 04:08:43.595">Setup failed:
+SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 116.0.5845.110 with binary path /usr/bin/google-chrome
+Stacktrace:
+#0 0x5590d16654e3 &lt;unknown&gt;
+#1 0x5590d1394c76 &lt;unknown&gt;
+#2 0x5590d13c204a &lt;unknown&gt;
+#3 0x5590d13bd4a1 &lt;unknown&gt;
+#4 0x5590d13ba029 &lt;unknown&gt;
+#5 0x5590d13f8ccc &lt;unknown&gt;
+#6 0x5590d13f847f &lt;unknown&gt;
+#7 0x5590d13efde3 &lt;unknown&gt;
+#8 0x5590d13c52dd &lt;unknown&gt;
+#9 0x5590d13c634e &lt;unknown&gt;
+#10 0x5590d16253e4 &lt;unknown&gt;
+#11 0x5590d16293d7 &lt;unknown&gt;
+#12 0x5590d1633b20 &lt;unknown&gt;
+#13 0x5590d162a023 &lt;unknown&gt;
+#14 0x5590d15f81aa &lt;unknown&gt;
+#15 0x5590d164e6b8 &lt;unknown&gt;
+#16 0x5590d164e847 &lt;unknown&gt;
+#17 0x5590d165e243 &lt;unknown&gt;
+#18 0x7fc909e94b43 &lt;unknown&gt;
+</status>
 </test>
-<status status="PASS" starttime="20230810 01:33:12.192" endtime="20230810 01:34:16.647"/>
+<status status="FAIL" starttime="20230910 04:08:24.605" endtime="20230910 04:08:43.596"/>
 </suite>
 <statistics>
 <total>
-<stat pass="5" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="5" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="5" fail="0" skip="0" id="s1" name="Login Test">Login Test</stat>
+<stat pass="0" fail="5" skip="0" id="s1" name="Login Test">Login Test</stat>
 </suite>
 </statistics>
 <errors>

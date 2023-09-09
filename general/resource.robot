@@ -11,7 +11,7 @@ ${MAIN_PAGE}      https://opensource-demo.orangehrmlive.com/web/index.php/auth/l
 
 *** Keywords ***
 Open Main Page Using Chrome Browser
-  SeleniumLibrary.Open Browser    ${MAIN_PAGE}    chrome    
+  SeleniumLibrary.Open Browser    ${MAIN_PAGE}    headlesschrome
   SeleniumLibrary.Reload Page
   SeleniumLibrary.Maximize Browser Window
 Close Browser In The End of Test Cases
